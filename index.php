@@ -1,8 +1,8 @@
 <?php
 include('assets/parsedown/Parsedown.php');
 //
-//$Parsedown = new Parsedown();
-//echo $Parsedown->text( $blubber );
+$tmplfooter = file_get_contents('./inhalt/footer-de.md');
+$Parsedown = new Parsedown();
 ?><!DOCTYPE html>
 <html lang="de">
   <head>
@@ -45,6 +45,7 @@ include('assets/parsedown/Parsedown.php');
     </main>
 
     <footer class="tmpl-footer">
+      <?php echo $Parsedown->text( $tmplfooter ); ?>
 
     </footer>
   </body>
