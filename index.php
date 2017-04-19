@@ -44,37 +44,39 @@ $Parsedown = new Parsedown();
     <link rel="stylesheet" href="https://rawcdn.githack.com/maybegeek/neogridic/master/neogridic.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
-  <body>
+  <body class="grid w960">
 
-    <header class="tmpl-header">
-      <h1>mdone</h1>
-      <p>markdown to one page</p>
+    <header class="tmpl-header row">
+      <h1 class="c8">mdone</h1>
+      <p class="c4">markdown to one page</p>
     </header>
 
-    <nav class="tmpl-nav">
-      <ul>
+    <nav class="tmpl-nav row">
+      <ul class="c12">
         <li><a href="#">Dinge</a></li>
         <li><a href="#">Sachen</a></li>
         <li><a href="#">Zeug</a></li>
       </ul>
     </nav>
 
-    <main>
-      <section class="tmpl-main-one">
+    <main class="row">
+      <section class="tmpl-main-one c12">
 
       </section>
 
-      <section class="tmpl-main-two">
+      <section class="tmpl-main-two c12">
 
       </section>
 
-      <section class="tmpl-main-three">
+      <section class="tmpl-main-three c12">
 
       </section>
     </main>
 
-    <footer class="tmpl-footer">
-      <?php echo $Parsedown->text( $tmplfooter ); ?>
+    <footer class="tmpl-footer row">
+      <div>
+        <?php echo $Parsedown->text( $tmplfooter ); ?>
+      </div>
 
     </footer>
   </body>
