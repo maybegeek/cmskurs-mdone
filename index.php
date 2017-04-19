@@ -27,6 +27,9 @@ $i18n['DE']['metaAuthor'] = 'Vorname Nachname';
 $i18n['EN']['metaAuthor'] = 'Vorname Nachname';
 
 // get the language corresponding content
+$tmplmain1 = file_get_contents("./inhalt/main-1-oben-{$i18n['short']}.md");
+$tmplmain2 = file_get_contents("./inhalt/main-2-mitte-{$i18n['short']}.md");
+$tmplmain3 = file_get_contents("./inhalt/main-3-unten-{$i18n['short']}.md");
 $tmplfooter = file_get_contents("./inhalt/footer-{$i18n['short']}.md");
 
 // init Parsedown
@@ -61,20 +64,23 @@ $Parsedown = new Parsedown();
 
     <main class="row">
       <section class="tmpl-main-one c12">
+        <?php echo $Parsedown->text( $tmplmain1 ); ?>
 
       </section>
 
       <section class="tmpl-main-two c12">
+        <?php echo $Parsedown->text( $tmplmain2 ); ?>
 
       </section>
 
       <section class="tmpl-main-three c12">
+        <?php echo $Parsedown->text( $tmplmain3 ); ?>
 
       </section>
     </main>
 
     <footer class="tmpl-footer row">
-      <div>
+      <div class="c12">
         <?php echo $Parsedown->text( $tmplfooter ); ?>
       </div>
 
