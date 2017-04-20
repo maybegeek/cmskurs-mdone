@@ -126,3 +126,15 @@ div.para3 {
     margin-bottom:0;
   }
 }
+
+@media (max-width: 560px) {
+  nav.tmpl-nav {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 420px) {
+  nav.tmpl-nav {
+    font-size: 1.1em;
+  }
+}
