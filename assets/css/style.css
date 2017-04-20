@@ -50,42 +50,57 @@ nav.tmpl-nav a:hover {
 
 
 /* language chooser */
-p.sprachen {
+.sprache {
   width:50px;
   font-size:1.4em;
-  text-align:left;
   margin-bottom: 0;
   margin-top: 0;
+  float: right;
 }
 
-p.sprachen .flag-de {
-  margin-bottom:-8px;
+.sprachen .flag-de {
+  margin-bottom:-32px;
 }
 
-p.sprachen .flag-en {
-  margin-bottom:-5px;
+.sprachen .flag-en {
+  margin-bottom:-6px;
 }
 
-p.sprachen span.sprache a {
+.sprachen span.sprache a {
   border-bottom:none !important;
   padding:0 !important;
 }
 
-p.sprachen span.sprache svg {
-  float:left;
+.sprachen span.sprache svg {
   width: 1em;
   height: 1em;
 }
 
-p.sprachen span.sprache span.literal {
-  padding-left:4px;
+
+div.para1,
+div.para2,
+div.para3 {
+  padding: 0;
 }
 
+.parallax-window {
+  min-height: 450px;
+  background: transparent;
+}
 
 /* resp. media queries */
 @media (max-width: 768px) {
   header p.teaser {
     padding-top: 0;
     margin-top: 0;
+  }
+  .sprache {
+    float: left;
+  }
+  .sprachen .flag-de {
+    margin-bottom:0;
+  }
+  .sprachen .flag-en {
+    margin-bottom:0;
   }
 }

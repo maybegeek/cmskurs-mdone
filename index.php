@@ -33,6 +33,9 @@ $tmplmain1    = file_get_contents("./inhalt/main-1-oben-{$i18n['short']}.md");
 $tmplmain2    = file_get_contents("./inhalt/main-2-mitte-{$i18n['short']}.md");
 $tmplmain3    = file_get_contents("./inhalt/main-3-unten-{$i18n['short']}.md");
 $tmplfooter   = file_get_contents("./inhalt/footer-{$i18n['short']}.md");
+$parallax1    = trim(file_get_contents("./inhalt/parallax-1.txt"));
+$parallax2    = trim(file_get_contents("./inhalt/parallax-2.txt"));
+$parallax3    = trim(file_get_contents("./inhalt/parallax-3.txt"));
 //
 // Parsedown for Markdown to HTML
 include('assets/parsedown/Parsedown.php');
@@ -83,14 +86,26 @@ $Parsedown = new Parsedown();
     </svg>
 
     <div class="row">
-      <p class="c12 sprachen"><?php foreach($languages as $language) {
-        echo '<span class="sprache sprache-'.strtolower($language).'"><a href="?lang='.$language.'" title="'.strtolower($language).'"><svg class="flag flag-'.strtolower($language).'"><use xlink:href="'.$i18n[$language]['flag'].'"></use></svg></a></span>'."\n";
-        } ?></p>
+
+
+<?php
+if (isset($parallax1)) {
+    echo '
+      <div class="c12 para1">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="' . $parallax1 . '" data-naturalWidth="900" data-naturalHeight="600"></div>
+      </div>
+';
+}
+?>
+
     </div>
 
     <header class="tmpl-header row">
-      <h1 class="c8"><?php echo $i18n[LANG]['title']; ?></h1>
+      <h1 class="c6"><?php echo $i18n[LANG]['title']; ?></h1>
       <p class="c4 teaser"><?php echo $i18n[LANG]['teaser']; ?></p>
+      <span class="c2 sprachen"><?php foreach($languages as $language) {
+        echo '<span class="sprache sprache-'.strtolower($language).'"><a href="?lang='.$language.'" title="'.strtolower($language).'"><svg class="flag flag-'.strtolower($language).'"><use xlink:href="'.$i18n[$language]['flag'].'"></use></svg></a></span>'."\n";
+      } ?></span>
     </header>
 
     <nav class="tmpl-nav row">
@@ -107,11 +122,30 @@ $Parsedown = new Parsedown();
 
       </section>
 
+<?php
+if (isset($parallax2)) {
+    echo '
+      <div class="c12 para2">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="' . $parallax2 . '" data-naturalWidth="900" data-naturalHeight="600"></div>
+      </div>
+';
+}
+?>
+
       <section class="tmpl-main-two c12">
         <?php echo $Parsedown->text( $tmplmain2 ); ?>
 
       </section>
 
+<?php
+if (isset($parallax3)) {
+    echo '
+      <div class="c12 para3">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="' . $parallax3 . '" data-naturalWidth="900" data-naturalHeight="600"></div>
+      </div>
+';
+}
+?>
       <section class="tmpl-main-three c12">
         <?php echo $Parsedown->text( $tmplmain3 ); ?>
 
@@ -129,5 +163,8 @@ $Parsedown = new Parsedown();
       $("nav.tmpl-nav").sticky({topSpacing:0});
     });
   </script>
+  <script src="assets/js/parallax.min.js"></script>
+  <script src="assets/js/smooth-scroll.js"></script>
+  <script>smoothScroll.init();</script>
   </body>
 </html>
