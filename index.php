@@ -1,21 +1,18 @@
 <?php
 session_start();
 header('Cache-control: private');
+//
 // multilanguage
 $languages = array('DE', 'EN');
-// Parsedown for Markdown to HTML
-include('assets/parsedown/Parsedown.php');
-//
 if(in_array($_GET['lang'], $languages)) {
   $_SESSION['lang'] = $_GET['lang'];
   header('Location:http://maybegeek.de/~cms/mdone/');
   exit();
 }
-
 define('LANG', in_array($_SESSION['lang'], $languages) ? $_SESSION['lang'] : 'DE');
 $i18n = array();
 $i18n['short'] = strtolower(LANG);
-
+//
 // technical debt: statische Sprach-String-Zuweisung
 $i18n['DE']['title'] = 'mdone';
 $i18n['EN']['title'] = 'mdone';
@@ -27,14 +24,15 @@ $i18n['DE']['metaKeywords'] = 'Markdown, Parsedown, Multilanguage, Ein-Seiter';
 $i18n['EN']['metaKeywords'] = 'markdown, parsedown, multilanguage, one page';
 $i18n['DE']['metaAuthor'] = 'Vorname Nachname';
 $i18n['EN']['metaAuthor'] = 'Vorname Nachname';
-
+//
 // get the language corresponding content
-$tmplmain1 = file_get_contents("./inhalt/main-1-oben-{$i18n['short']}.md");
-$tmplmain2 = file_get_contents("./inhalt/main-2-mitte-{$i18n['short']}.md");
-$tmplmain3 = file_get_contents("./inhalt/main-3-unten-{$i18n['short']}.md");
-$tmplfooter = file_get_contents("./inhalt/footer-{$i18n['short']}.md");
-
-// init Parsedown
+$tmplmain1    = file_get_contents("./inhalt/main-1-oben-{$i18n['short']}.md");
+$tmplmain2    = file_get_contents("./inhalt/main-2-mitte-{$i18n['short']}.md");
+$tmplmain3    = file_get_contents("./inhalt/main-3-unten-{$i18n['short']}.md");
+$tmplfooter   = file_get_contents("./inhalt/footer-{$i18n['short']}.md");
+//
+// Parsedown for Markdown to HTML
+include('assets/parsedown/Parsedown.php');
 $Parsedown = new Parsedown();
 ?><!DOCTYPE html>
 <html lang="<?php echo $i18n['short']; ?>">
