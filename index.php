@@ -25,6 +25,8 @@ $i18n['DE']['metaKeywords'] = 'Markdown, Parsedown, Multilanguage, Ein-Seiter';
 $i18n['EN']['metaKeywords'] = 'markdown, parsedown, multilanguage, one page';
 $i18n['DE']['metaAuthor'] = 'Vorname Nachname';
 $i18n['EN']['metaAuthor'] = 'Vorname Nachname';
+$i18n['DE']['flag'] = '#flagGermany';
+$i18n['EN']['flag'] = '#flagUnitedKingdom';
 //
 // get the language corresponding content
 $tmplmain1    = file_get_contents("./inhalt/main-1-oben-{$i18n['short']}.md");
@@ -79,7 +81,9 @@ $Parsedown = new Parsedown();
     </svg>
 
     <div class="row">
-      <p class="c12"><a href="<?php echo $scriptroot; ?>?lang=EN">en</a> | <a href="<?php echo $scriptroot; ?>?lang=DE">de</a></p>
+      <p class="c12"><?php foreach($languages as $language) {
+        echo '<span class="sprache sprache-'.strtolower($language).'"><a href="?lang='.$language.'" title="'.strtolower($language).'"><svg class="flag flag-'.strtolower($language).'"><use xlink:href="'.$i18n[$language]['flag'].'"></use></svg></a></span>'."\n";
+        } ?></p>
     </div>
 
     <header class="tmpl-header row">
