@@ -1,12 +1,13 @@
 <?php
 session_start();
 header('Cache-control: private');
+$scriptroot = $_SERVER['SCRIPT_URI'];
 //
 // multilanguage
 $languages = array('DE', 'EN');
 if(in_array($_GET['lang'], $languages)) {
   $_SESSION['lang'] = $_GET['lang'];
-  header('Location:http://maybegeek.de/~cms/mdone/');
+  header("Location:$scriptroot");
   exit();
 }
 define('LANG', in_array($_SESSION['lang'], $languages) ? $_SESSION['lang'] : 'DE');
@@ -45,9 +46,14 @@ $Parsedown = new Parsedown();
     <meta name="publisher" content="<?php echo $i18n[LANG]['metaAuthor']; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://rawcdn.githack.com/maybegeek/neogridic/master/neogridic.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Eczar">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body class="grid w640">
+
+    <div class="row">
+      <p class="c12"><a href="<?php echo $scriptroot; ?>?lang=EN">en</a> | <a href="<?php echo $scriptroot; ?>?lang=DE">de</a></p>
+    </div>
 
     <header class="tmpl-header row">
       <h1 class="c8"><?php echo $i18n[LANG]['title']; ?></h1>
