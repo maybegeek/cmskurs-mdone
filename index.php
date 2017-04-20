@@ -50,6 +50,8 @@ $Parsedown = new Parsedown();
     <link rel="stylesheet" href="https://rawcdn.githack.com/maybegeek/neogridic/master/neogridic.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Eczar">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.sticky.js"></script>
   </head>
   <body class="grid w640">
 
@@ -88,7 +90,7 @@ $Parsedown = new Parsedown();
 
     <header class="tmpl-header row">
       <h1 class="c8"><?php echo $i18n[LANG]['title']; ?></h1>
-      <p class="c4"><?php echo $i18n[LANG]['teaser']; ?></p>
+      <p class="c4 teaser"><?php echo $i18n[LANG]['teaser']; ?></p>
     </header>
 
     <nav class="tmpl-nav row">
@@ -122,5 +124,10 @@ $Parsedown = new Parsedown();
 
       </div>
     </footer>
+  <script>
+    $(document).ready(function(){
+      $("nav.tmpl-nav").sticky({topSpacing:0});
+    });
+  </script>
   </body>
 </html>
