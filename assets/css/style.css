@@ -8,3 +8,34 @@ body {
   font-size:1.3em;
   font-family: 'Eczar', serif;
 }
+
+p.sprachen {
+  width:50px;
+  font-size:1.4em;
+  text-align:left;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+p.sprachen .flag-de {
+  margin-bottom:-8px;
+}
+
+p.sprachen .flag-en {
+  margin-bottom:-5px;
+}
+
+p.sprachen span.sprache a {
+  border-bottom:none !important;
+  padding:0 !important;
+}
+
+p.sprachen span.sprache svg {
+  float:left;
+  width: 1em;
+  height: 1em;
+}
+
+p.sprachen span.sprache span.literal {
+  padding-left:4px;
+}

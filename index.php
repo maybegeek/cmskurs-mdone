@@ -81,7 +81,7 @@ $Parsedown = new Parsedown();
     </svg>
 
     <div class="row">
-      <p class="c12"><?php foreach($languages as $language) {
+      <p class="c12 sprachen"><?php foreach($languages as $language) {
         echo '<span class="sprache sprache-'.strtolower($language).'"><a href="?lang='.$language.'" title="'.strtolower($language).'"><svg class="flag flag-'.strtolower($language).'"><use xlink:href="'.$i18n[$language]['flag'].'"></use></svg></a></span>'."\n";
         } ?></p>
     </div>
