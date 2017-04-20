@@ -88,8 +88,8 @@ $Parsedown = new Parsedown();
     <footer class="tmpl-footer row">
       <div class="c12">
         <?php echo $Parsedown->text( $tmplfooter ); ?>
-      </div>
 
+      </div>
     </footer>
   </body>
 </html>
