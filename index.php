@@ -25,6 +25,12 @@ $i18n['DE']['metaKeywords'] = 'Markdown, Parsedown, Multilanguage, Ein-Seiter';
 $i18n['EN']['metaKeywords'] = 'markdown, parsedown, multilanguage, one page';
 $i18n['DE']['metaAuthor'] = 'Vorname Nachname';
 $i18n['EN']['metaAuthor'] = 'Vorname Nachname';
+$i18n['DE']['navOne'] = 'Menü1';
+$i18n['EN']['navOne'] = 'menu1';
+$i18n['DE']['navTwo'] = 'Menü2';
+$i18n['EN']['navTwo'] = 'menu2';
+$i18n['DE']['navThree'] = 'Menü3';
+$i18n['EN']['navThree'] = 'menu3';
 $i18n['DE']['flag'] = '#flagGermany';
 $i18n['EN']['flag'] = '#flagUnitedKingdom';
 //
@@ -101,7 +107,7 @@ if (isset($parallax1)) {
     </div>
 
     <header class="tmpl-header row">
-      <h1 class="c6"><?php echo $i18n[LANG]['title']; ?></h1>
+      <h1 class="c6"><a href="<?php echo $scriptroot; ?>"><?php echo $i18n[LANG]['title']; ?></a></h1>
       <p class="c4 teaser"><?php echo $i18n[LANG]['teaser']; ?></p>
       <span class="c2 sprachen"><?php foreach($languages as $language) {
         echo '<span class="sprache sprache-'.strtolower($language).'"><a href="?lang='.$language.'" title="'.strtolower($language).'"><svg class="flag flag-'.strtolower($language).'"><use xlink:href="'.$i18n[$language]['flag'].'"></use></svg></a></span>'."\n";
@@ -110,14 +116,14 @@ if (isset($parallax1)) {
 
     <nav class="tmpl-nav row">
       <ul class="c12">
-        <li><a href="#">Dinge</a></li>
-        <li><a href="#">Sachen</a></li>
-        <li><a href="#">Zeug</a></li>
+        <li><a href="#main-section-one"><?php echo $i18n[LANG]['navOne']; ?></a></li>
+        <li><a href="#main-section-two"><?php echo $i18n[LANG]['navTwo']; ?></a></li>
+        <li><a href="#main-section-three"><?php echo $i18n[LANG]['navThree']; ?></a></li>
       </ul>
     </nav>
 
     <main class="row">
-      <section class="tmpl-main-one c12">
+      <section id="main-section-one" class="tmpl-main-one c12">
         <?php echo $Parsedown->text( $tmplmain1 ); ?>
 
       </section>
@@ -132,7 +138,7 @@ if (isset($parallax2)) {
 }
 ?>
 
-      <section class="tmpl-main-two c12">
+      <section id="main-section-two" class="tmpl-main-two c12">
         <?php echo $Parsedown->text( $tmplmain2 ); ?>
 
       </section>
@@ -146,7 +152,7 @@ if (isset($parallax3)) {
 ';
 }
 ?>
-      <section class="tmpl-main-three c12">
+      <section id="main-section-three" class="tmpl-main-three c12">
         <?php echo $Parsedown->text( $tmplmain3 ); ?>
 
       </section>

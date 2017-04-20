@@ -48,6 +48,19 @@ nav.tmpl-nav a:hover {
   z-index: 9999;
 }
 
+#sticky-wrapper.is-sticky nav {
+  height: 60px;
+}
+
+#sticky-wrapper.is-sticky nav ul {
+  margin-top: 5px;
+}
+
+#sticky-wrapper.is-sticky nav ul a {
+  border-bottom: 2px dashed;
+  line-height:1;
+  display: inline-block;
+}
 
 /* language chooser */
 .sprache {
@@ -76,6 +89,9 @@ nav.tmpl-nav a:hover {
   height: 1em;
 }
 
+h2 {
+  font-size: 1.8em;
+}
 
 div.para1,
 div.para2,
@@ -84,7 +100,7 @@ div.para3 {
 }
 
 .parallax-window {
-  min-height: 450px;
+  min-height: 250px;
   background: transparent;
 }
 
