@@ -9,6 +9,10 @@ body {
   font-family: 'Eczar', serif;
 }
 
+a {
+  color: rgba(189, 195, 199,1.0);
+}
+
 header p.teaser {
   line-height: 1.10;
   padding-top: 0.8em;
