@@ -74,30 +74,34 @@ section#main-section-three:target {
 }
 
 /* language chooser */
-.sprache {
-  width:50px;
-  font-size:1.4em;
-  margin-bottom: 0;
-  margin-top: 0;
-  float: right;
+.sprachen {
+  padding-top: 1.6em;
 }
 
-.sprachen .flag-de {
-  margin-bottom:-32px;
+.sprachen .sprache {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  line-height:0.9;
+}
+.sprachen .sprache a {
+  position: relative;
+  display: inline-block;
+  line-height:0.1;
 }
 
-.sprachen .flag-en {
-  margin-bottom:-6px;
+.sprachen .sprache a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left:0;
 }
 
-.sprachen span.sprache a {
-  border-bottom:none !important;
-  padding:0 !important;
-}
-
-.sprachen span.sprache svg {
-  width: 1em;
-  height: 1em;
+.sprachen .sprache svg {
+  width: 40px;
+  height: 26px;
 }
 
 h2 {
