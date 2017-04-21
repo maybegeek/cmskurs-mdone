@@ -46,6 +46,7 @@ nav.tmpl-nav a:hover {
 
 #sticky-wrapper.is-sticky {
   z-index: 9999;
+  margin-bottom: 60px;
 }
 
 #sticky-wrapper.is-sticky nav {
